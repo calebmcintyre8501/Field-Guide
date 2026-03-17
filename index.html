@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hunter's Field Guide</title>
+    <script type="module" src="/src/main.ts"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Libre+Baskerville:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <img src="/banner.jpg" alt="Monster Hunter Banner" class="banner-image" />
+
+      <div class="header-text">
+        <h1>Hunter's Field Guide</h1>
+        <p>
+          A hunter’s reference for tracking Monster Hunter: World creatures by
+          species, size, weakness, and habitat.
+        </p>
+      </div>
+    </header>
+
+    <main class="app-layout">
+      <section class="controls" aria-label="Hunter Notes">
+        <h2>Hunter Notes</h2>
+
+        <label for="search">Search Creatures</label>
+        <input id="search" type="text" placeholder="Search by name..." />
+
+        <label for="typeFilter">Filter by Size</label>
+        <select id="typeFilter">
+          <option value="all">All Sizes</option>
+        </select>
+
+        <label for="speciesFilter">Filter by Species</label>
+        <select id="speciesFilter">
+          <option value="all">All Species</option>
+        </select>
+
+        <label for="elementFilter">Filter by Element</label>
+        <select id="elementFilter">
+          <option value="all">All Elements</option>
+        </select>
+
+        <label for="weaknessFilter">Filter by Weakness</label>
+        <select id="weaknessFilter">
+          <option value="all">All Weaknesses</option>
+        </select>
+
+        <label for="sortSelect">Sort Entries</label>
+        <select id="sortSelect">
+          <option value="az">Name: A to Z</option>
+          <option value="za">Name: Z to A</option>
+          <option value="mostWeaknesses">Most Weak Points</option>
+          <option value="fewestWeaknesses">Fewest Weak Points</option>
+        </select>
+
+        <button id="clearFilters" type="button">Clear Filters</button>
+      </section>
+
+      <section class="results-section">
+        <h2>Field Entries</h2>
+        <div id="statusMessage" class="status-message" aria-live="polite"></div>
+        <div id="monsterList" class="monster-grid"></div>
+      </section>
+
+      <aside class="details-panel" aria-label="Field Record">
+        <div id="monsterDetails">
+          <div class="empty-record">
+            <div class="empty-record-icon">📖</div>
+            <h2>Field Record</h2>
+            <p>Select a creature to open its field record.</p>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <p>Compiled for hunters seeking knowledge in the New World.</p>
+    </footer>
+  </body>
+</html>
